@@ -1,6 +1,6 @@
 # IDURAR اوپن سورس ERP & CRM سافٹ ویئر
 
-GitHub: [https://github.com/idurar/idurar-erp-crm](https://github.com/idurar/idurar-erp-crm)
+GitHub: [https://github.com/himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master)
 ڈیمو: [https://www.idurarapp.com/open-source-erp-crm/](https://www.idurarapp.com/open-source-erp-crm/)
 ویب سائٹ: [https://www.idurarapp.com](https://www.idurarapp.com)
 

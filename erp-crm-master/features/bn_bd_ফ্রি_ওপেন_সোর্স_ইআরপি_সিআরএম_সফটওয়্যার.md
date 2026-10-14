@@ -1,6 +1,6 @@
 # IDURAR ওপেন-সোর্স ইআরপি এবং সিআরএম সফটওয়্যার
 
-গিটহাব: [https://github.com/idurar/idurar-erp-crm](https://github.com/idurar/idurar-erp-crm)
+গিটহাব: [https://github.com/himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master)
 ডেমো: [https://www.idurarapp.com/open-source-erp-crm/](https://www.idurarapp.com/open-source-erp-crm/)
 ওয়েবসাইট: [https://www.idurarapp.com](https://www.idurarapp.com)
 

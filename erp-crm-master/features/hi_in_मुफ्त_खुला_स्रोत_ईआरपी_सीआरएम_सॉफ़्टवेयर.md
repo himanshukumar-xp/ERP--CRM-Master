@@ -1,6 +1,6 @@
 # IDURAR ओपन-सोर्स ईआरपी और सीआरएम सॉफ्टवेयर
 
-गिटहब: [https://github.com/idurar/idurar-erp-crm](https://github.com/idurar/idurar-erp-crm)
+गिटहब: [https://github.com/himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master)
 डेमो: [https://www.idurarapp.com/open-source-erp-crm/](https://www.idurarapp.com/open-source-erp-crm/)
 वेबसाइट: [https://www.idurarapp.com](https://www.idurarapp.com)
 

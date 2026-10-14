@@ -1,5 +1,5 @@
 {
-  "name": "idurar-erp-crm",
+  "name": "erp-crm-master",
   "version": "4.1.0",
   "engines": {
     "npm": "10.2.4",
@@ -48,15 +48,15 @@
     "@": "src"
   },
   "main": "server.js",
-  "author": "IDURAR",
+  "author": "himanshukumar-xp",
   "email": "hello@idurarapp.com",
   "license": "Fair-code License",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idurar/idurar-erp-crm/.git"
+    "url": "git+https://github.com/himanshukumar-xp/ERP--CRM-Master/.git"
   },
   "bugs": {
-    "url": "https://github.com/idurar/idurar-erp-crm//issues"
+    "url": "https://github.com/himanshukumar-xp/ERP--CRM-Master/issues"
   },
-  "homepage": "https://github.com/idurar/idurar-erp-crm/#readme"
+  "homepage": "https://github.com/himanshukumar-xp/ERP--CRM-Master/#readme"
 }

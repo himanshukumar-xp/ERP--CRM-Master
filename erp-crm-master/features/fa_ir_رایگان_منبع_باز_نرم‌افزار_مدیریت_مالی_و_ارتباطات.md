@@ -1,6 +1,6 @@
 # نرم‌افزار متن‌باز IDURAR ERP & CRM
 
-گیت‌هاب: [https://github.com/idurar/idurar-erp-crm](https://github.com/idurar/idurar-erp-crm)
+گیت‌هاب: [https://github.com/himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master)
 نمایش آنلاین: [https://www.idurarapp.com/open-source-erp-crm/](https://www.idurarapp.com/open-source-erp-crm/)
 وبسایت: [https://www.idurarapp.com](https://www.idurarapp.com)
 

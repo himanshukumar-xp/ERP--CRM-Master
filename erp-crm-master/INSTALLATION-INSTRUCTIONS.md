@@ -3,11 +3,11 @@
 #### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/idurar/idurar-erp-crm.git
+git clone https://github.com/himanshukumar-xp/ERP--CRM-Master.git
 ```
 
 ```bash
-cd idurar-erp-crm
+cd ERP--CRM-Master
 ```
 
 #### Step 2: Create Your MongoDB Account and Database Cluster

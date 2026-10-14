@@ -1,6 +1,6 @@
 # Oprogramowanie IDURAR Open-Source ERP & CRM
 
-GitHub: [https://github.com/idurar/idurar-erp-crm](https://github.com/idurar/idurar-erp-crm)
+GitHub: [https://github.com/himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master)
 Demo: [https://www.idurarapp.com/open-source-erp-crm/](https://www.idurarapp.com/open-source-erp-crm/)
 Strona internetowa: [https://www.idurarapp.com](https://www.idurarapp.com)
 

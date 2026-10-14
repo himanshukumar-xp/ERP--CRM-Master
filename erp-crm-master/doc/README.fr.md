@@ -32,7 +32,7 @@ nom d'utilisateur : admin@admin.com  mot de passe : admin123
 ## License
 
 IDURAR est un Open Code Source gratuit [fair-code](http://faircode.io) distribué sous la
-[**IDURAR License 1.0**](https://github.com/idurar/idurar-erp-crm/blob/master/LICENSE)
+[**IDURAR License 1.0**](https://github.com/himanshukumar-xp/ERP--CRM-Master/blob/master/LICENSE)
 
 ## License FAQ :
 
@@ -77,7 +77,7 @@ Le webinaire aura lieu ce mercredi à 13h GMT.
 
 #
 
-<img width="1403" alt="Open Source ERP CRM" src="https://github.com/idurar/idurar-erp-crm/assets/136928179/a6712286-7ca6-4822-8902-fb7523533ee8">
+<img width="1403" alt="Open Source ERP CRM" src="https://github.com/himanshukumar-xp/ERP--CRM-Master/assets/136928179/a6712286-7ca6-4822-8902-fb7523533ee8">
 
 ## Application ERP / CRM Open Source gratuite
 
@@ -128,19 +128,19 @@ Cela construira les images et lancera les conteneurs pour le frontend, le backen
 
 ## Contribuer
 
-1.[Comment Contribuer](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#how-to-contribute)
+1.[Comment Contribuer](https://github.com/himanshukumar-xp/ERP--CRM-Master/blob/master/CONTRIBUTING.md#how-to-contribute)
 
-2.[Signaler des problèmes](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#reporting-issues)
+2.[Signaler des problèmes](https://github.com/himanshukumar-xp/ERP--CRM-Master/blob/master/CONTRIBUTING.md#reporting-issues)
 
-3.[Travailler sur des problèmes](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#working-on-issues)
+3.[Travailler sur des problèmes](https://github.com/himanshukumar-xp/ERP--CRM-Master/blob/master/CONTRIBUTING.md#working-on-issues)
 
-4.[Soumettre des pull requests](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#submitting-pull-requests)
+4.[Soumettre des pull requests](https://github.com/himanshukumar-xp/ERP--CRM-Master/blob/master/CONTRIBUTING.md#submitting-pull-requests)
 
-5.[Directives de commit](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#commit-guidelines)
+5.[Directives de commit](https://github.com/himanshukumar-xp/ERP--CRM-Master/blob/master/CONTRIBUTING.md#commit-guidelines)
 
-6.[Directives de codage](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#coding-guidelines)
+6.[Directives de codage](https://github.com/himanshukumar-xp/ERP--CRM-Master/blob/master/CONTRIBUTING.md#coding-guidelines)
 
-7.[Questions](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#questions)
+7.[Questions](https://github.com/himanshukumar-xp/ERP--CRM-Master/blob/master/CONTRIBUTING.md#questions)
 
 ## Service de développement personnalisé
 

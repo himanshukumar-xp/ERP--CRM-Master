@@ -17,7 +17,7 @@ This file follows the [llms.txt](https://llmstxt.org) convention to help AI agen
 
 ## Projects
 
-- [IDURAR ERP CRM](https://github.com/idurar/idurar-erp-crm): open-source ERP/CRM — designed the UI/UX and built the full stack, owner & principal maintainer (8500+ stars)
+- [IDURAR ERP CRM](https://github.com/himanshukumar-xp/ERP--CRM-Master): open-source ERP/CRM — designed the UI/UX and built the full stack, owner & principal maintainer (8500+ stars)
 - [IDURAR SaaS](https://cloud.idurarapp.com): hosted ERP/CRM SaaS product — same end-to-end design + engineering ownership
 
 ## Skills

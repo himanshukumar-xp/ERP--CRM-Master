@@ -7,7 +7,7 @@ const About = () => {
   return (
     <Result
       status="info"
-      title={'IDURAR'}
+      title={'ERP CRM Master'}
       subTitle={translate('Do you need help on customize of this app')}
       extra={
         <>
@@ -16,8 +16,8 @@ const About = () => {
           </p>
           <p>
             GitHub :{' '}
-            <a href="https://github.com/idurar/idurar-erp-crm">
-              https://github.com/idurar/idurar-erp-crm
+            <a href="https://github.com/himanshukumar-xp/ERP--CRM-Master">
+              https://github.com/himanshukumar-xp/ERP--CRM-Master
             </a>
           </p>
           <Button

@@ -1,6 +1,6 @@
 # IDURAR برنامج إدارة الموارد التخطيطية وعلاقات العملاء مفتوح المصدر
 
-GitHub: [https://github.com/idurar/idurar-erp-crm](https://github.com/idurar/idurar-erp-crm)
+GitHub: [https://github.com/himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master)
 العرض التوضيحي: [https://www.idurarapp.com/open-source-erp-crm/](https://www.idurarapp.com/open-source-erp-crm/)
 الموقع الإلكتروني: [https://www.idurarapp.com](https://www.idurarapp.com)
 

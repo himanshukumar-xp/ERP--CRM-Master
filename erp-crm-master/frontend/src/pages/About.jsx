@@ -12,9 +12,6 @@ const About = () => {
       extra={
         <>
           <p>
-            Website : <a href="https://www.idurarapp.com">www.idurarapp.com</a>{' '}
-          </p>
-          <p>
             GitHub :{' '}
             <a href="https://github.com/himanshukumar-xp/ERP--CRM-Master">
               https://github.com/himanshukumar-xp/ERP--CRM-Master
@@ -23,7 +20,7 @@ const About = () => {
           <Button
             type="primary"
             onClick={() => {
-              window.open(`https://www.idurarapp.com/contact-us/`);
+              window.open(`https://github.com/himanshukumar-xp/ERP--CRM-Master/issues`);
             }}
           >
             {translate('Contact us')}

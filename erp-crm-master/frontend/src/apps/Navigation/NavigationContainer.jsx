@@ -5,8 +5,6 @@ import { Button, Drawer, Layout, Menu } from 'antd';
 import { useAppContext } from '@/context/appContext';
 
 import useLanguage from '@/locale/useLanguage';
-import logoIcon from '@/style/images/logo-icon.svg';
-import logoText from '@/style/images/logo-text.svg';
 
 import useResponsive from '@/hooks/useResponsive';
 
@@ -149,21 +147,22 @@ function Sidebar({ collapsible, isMobile = false }) {
         onClick={() => navigate('/')}
         style={{
           cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          height: '40px',
+          paddingLeft: '16px',
         }}
       >
-        <img src={logoIcon} alt="Logo" style={{ marginLeft: '-5px', height: '40px' }} />
-
-        {!showLogoApp && (
-          <img
-            src={logoText}
-            alt="Logo"
-            style={{
-              marginTop: '3px',
-              marginLeft: '10px',
-              height: '38px',
-            }}
-          />
-        )}
+        <span
+          style={{
+            color: '#1677ff',
+            fontSize: showLogoApp ? 18 : 22,
+            fontWeight: 700,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {showLogoApp ? 'ECM' : 'ERP CRM Master'}
+        </span>
       </div>
       <Menu
         items={items}

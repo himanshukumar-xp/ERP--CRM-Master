@@ -7,8 +7,6 @@ const sendMail = require('./sendMail');
 const shortid = require('shortid');
 const { loadSettings } = require('@/middlewares/settings');
 
-const { useAppSettings } = require('@/settings');
-
 const forgetPassword = async (req, res, { userModel }) => {
   const UserPassword = mongoose.model(userModel + 'Password');
   const User = mongoose.model(userModel);
@@ -52,11 +50,11 @@ const forgetPassword = async (req, res, { userModel }) => {
     }
   ).exec();
 
-  const settings = useAppSettings();
-  const idurar_app_email = settings['idurar_app_email'];
-  const idurar_base_url = settings['idurar_base_url'];
+  const settings = await loadSettings();
+  const app_email = settings['app_email'];
+  const base_url = settings['base_url'];
 
-  const url = checkAndCorrectURL(idurar_base_url);
+  const url = checkAndCorrectURL(base_url);
 
   const link = url + '/resetpassword/' + user._id + '/' + resetToken;
 
@@ -64,8 +62,8 @@ const forgetPassword = async (req, res, { userModel }) => {
     email,
     name: user.name,
     link,
-    subject: 'Reset your password | idurar',
-    idurar_app_email,
+    subject: 'Reset your password | ERP CRM Master',
+    app_email,
     type: 'passwordVerfication',
   });
 

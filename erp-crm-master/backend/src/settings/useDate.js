@@ -1,7 +1,7 @@
 const useDate = ({ settings }) => {
-  const { idurar_app_date_format } = settings;
+  const { app_date_format } = settings;
 
-  const dateFormat = idurar_app_date_format;
+  const dateFormat = app_date_format;
 
   return {
     dateFormat,

@@ -1,9 +1,9 @@
-# ERP CRM Master — Open Source Invoice, Customer & Payment Management
+# ERP CRM Master — Accounting, Invoicing & CRM
 
-> **Suggested GitHub repo description:** Open-source ERP/CRM for invoicing, customers & payments — MERN stack (Node.js, Express, MongoDB, React) with Ant Design & Redux.
-> **Suggested topics:** `erp` `crm` `invoicing` `mern-stack` `react` `nodejs` `express` `mongodb` `ant-design` `redux` `open-source`
+> **Suggested GitHub repo description:** ERP/CRM for invoicing, customers & payments — MERN stack (Node.js, Express, MongoDB, React) with Ant Design & Redux.
+> **Suggested topics:** `erp` `crm` `invoicing` `mern-stack` `react` `nodejs` `express` `mongodb` `ant-design` `redux`
 
-A full-stack **ERP / CRM** web app for small businesses: manage **customers, invoices, payments, taxes, payment modes**, generate **PDF documents** (invoice/quote/payment), and configure company **settings** — with JWT auth, dashboard stats, and multi-language support. Forked from the IDURAR open-source project (v4.1.0) into [himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master), set up and verified to run on `localhost`.
+A full-stack **ERP / CRM** web app for small businesses: manage **customers, invoices, payments, taxes, payment modes**, generate **PDF documents** (invoice/quote/payment), and configure company **settings** — with JWT auth, dashboard stats, and multi-language support. Maintained at [himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master); based on [IDURAR ERP/CRM](https://github.com/idurar/idurar-erp-crm) (see **License & credits** below). Set up and verified to run on `localhost`.
 
 **Live locally:** Frontend → http://localhost:3000 · Backend API → http://localhost:8888/api · Login → `admin@admin.com` / `admin123`
 
@@ -23,7 +23,7 @@ A full-stack **ERP / CRM** web app for small businesses: manage **customers, inv
 | ⚙️ Settings | Company/app settings incl. read/update by key, currency & language config |
 | 🌍 i18n | Locale packs under `backend/src/locale` & `frontend/src/locale` (default `en_us`) |
 
-> **Known gaps in this snapshot:** `frontend/src/router/routes.jsx` references `<Quote/>`, `<PaymentMode/>`, `<Taxes/>` without lazy imports, and there is no `Quote` backend model — so `/quote`, `/taxes`, `/payment/mode` UI routes fail while `/invoice`, `/customer`, `/payment`, `/settings` work fully. `html-pdf` (PhantomJS) is deprecated upstream — PDF export may fail on newer Node/Windows; core CRUD is unaffected.
+> **Known gaps in this snapshot:** `frontend/src/router/routes.jsx` references `<Quote/>`, `<PaymentMode/>`, `<Taxes/>` without lazy imports, and there is no `Quote` backend model — so `/quote`, `/taxes`, `/payment/mode` UI routes fail while `/invoice`, `/customer`, `/payment`, `/settings` work fully. `html-pdf` (PhantomJS) is deprecated — PDF export may fail on newer Node/Windows; core CRUD is unaffected.
 
 ---
 
@@ -33,7 +33,7 @@ A full-stack **ERP / CRM** web app for small businesses: manage **customers, inv
 |---|---|
 | Backend | Node.js ≥ 20 · Express 4.18 · Mongoose 8.1 · JWT · `module-alias` (`@` → `src`) |
 | Frontend | React 18.3 · Vite 5.4 · Ant Design 5.14 · Redux Toolkit 2.2 · React Router 6 · Axios |
-| Database | MongoDB ≥ 6 (verified with 9.0.2), DB name `idurar-erp-crm` |
+| Database | MongoDB ≥ 6 (verified with 9.0.2), DB name `erp-crm-master` |
 | PDF / mail | Pug + `html-pdf`, Nodemailer-style mail hooks, Resend/OpenAI keys optional |
 
 ---
@@ -44,7 +44,7 @@ A full-stack **ERP / CRM** web app for small businesses: manage **customers, inv
 erp-crm-master/
 ├── backend/
 │   ├── .env                      # DATABASE, JWT_SECRET, PORT=8888, ...
-│   ├── package.json              # scripts: dev / start / setup / reset
+│   ├── package.json              # scripts: dev / start / setup / reset / migrate:branding
 │   └── src/
 │       ├── server.js             # entry: connects Mongo, listens on 8888
 │       ├── app.js                # Express app, CORS, /api /download /public
@@ -60,6 +60,7 @@ erp-crm-master/
 │       │   ├── coreModels/       # Admin, AdminPassword, Setting, Upload
 │       │   └── utils/            # routesList auto-built from appModels files
 │       ├── setup/                # setup.js (seed admin/settings/tax/paymentmode)
+│       │                         # migrateBranding.js (one-time DB migration)
 │       ├── middlewares/          # auth, settings, upload (local / DO Spaces)
 │       ├── pdf/                  # invoice.pug, quote.pug, offer.pug, payment.pug
 │       └── locale/               # backend translations
@@ -76,9 +77,8 @@ erp-crm-master/
 │       ├── redux/                # store (crud/auth/settings slices)
 │       ├── request/              # axios instance + auth header
 │       └── locale/               # frontend translations
-├── INSTALLATION-INSTRUCTIONS.md  # upstream generic guide
 ├── LICENSE                       # GNU AGPL v3.0
-└── README.md                       # this file
+└── README.md                     # this file
 ```
 
 > \* `PaymentMode.js` / `Taxes.js` were missing from the snapshot (setup scripts required them) and were added to match the seed data and `TaxForm`/`PaymentModeForm` fields.
@@ -102,7 +102,7 @@ erp-crm-master/
 cd backend
 npm install
 # .env must contain at least:
-#   DATABASE=mongodb://127.0.0.1:27017/idurar-erp-crm
+#   DATABASE=mongodb://127.0.0.1:27017/erp-crm-master
 #   JWT_SECRET=<long random string>
 #   NODE_ENV=development
 #   PORT=8888
@@ -122,6 +122,8 @@ npm run dev        # → http://localhost:3000
 
 **Login:** `admin@admin.com` / `admin123` (role `owner`).
 
+> Upgrading an existing installation with data in the older `idurar-erp-crm` database? See **Upgrading a pre-rebrand database** below.
+
 **Windows one-liner for MongoDB** (what this machine used):
 
 ```powershell
@@ -133,13 +135,26 @@ New-Item -ItemType Directory -Force -Path C:\data\db
 
 ---
 
+## 🔄 Upgrading a pre-rebrand database
+
+Internal setting keys were renamed (`idurar_*` → `app_*`) and the default database name is now `erp-crm-master`. If you already have data in the old `idurar-erp-crm` database, run the one-time migration — it copies all collections into the new database and renames the setting keys, leaving the old database untouched as a backup:
+
+```bash
+cd backend
+npm run migrate:branding      # or: node src/setup/migrateBranding.js
+```
+
+Then restart the backend (settings are cached in memory). If your legacy database uses a different name, set `OLD_DATABASE_NAME=<name>` before running the script. Fresh installs can skip this — `npm run setup` seeds the new keys directly.
+
+---
+
 ## 🔧 Configuration
 
 **`backend/.env`**
 
 | Key | Required | Default / example |
 |---|---|---|
-| `DATABASE` | ✅ | `mongodb://127.0.0.1:27017/idurar-erp-crm` |
+| `DATABASE` | ✅ | `mongodb://127.0.0.1:27017/erp-crm-master` |
 | `JWT_SECRET` | ✅ | random 64-hex string |
 | `PORT` | – | `8888` |
 | `NODE_ENV` | – | `development` |
@@ -164,6 +179,7 @@ New-Item -ItemType Directory -Force -Path C:\data\db
 | backend | `npm start` | `node src/server.js` |
 | backend | `npm run setup` | seed admin + settings + taxes + payment modes |
 | backend | `npm run reset` | wipe those collections |
+| backend | `npm run migrate:branding` | one-time migration from the pre-rebrand database |
 | frontend | `npm run dev` | Vite dev on `:3000` |
 | frontend | `npm run build` / `preview` | production build / preview |
 
@@ -208,13 +224,13 @@ Invoke-RestMethod -Uri http://127.0.0.1:8888/api/login -Method Post `
 | `EADDRINUSE :::8888` | stale node holding 8888 → kill it, keep one backend instance |
 | Frontend loads but login fails / API 404 on `/quote/*` | Quote model+page missing in snapshot (known gap); invoice/customer/payment work |
 | `Cannot find module '../models/appModels/PaymentMode'` | fixed by added model files; re-seed taxes/paymentmodes if DB predates the fix |
-| PDF export errors (`html-pdf`/PhantomJS) | deprecated upstream dep; fails on Node ≥ 20/Win — CRUD unaffected, migrate to Puppeteer for PDFs |
+| Settings look empty after upgrading (language, date format, emails) | setting keys not migrated → run `npm run migrate:branding` (or re-seed) and restart the backend |
+| PDF export errors (`html-pdf`/PhantomJS) | deprecated dependency; fails on Node ≥ 20/Win — CRUD unaffected, migrate to Puppeteer for PDFs |
 | `npm warn EBADENGINE ... required node 20.9.0, current v22` | harmless warning; verified working on Node 22 |
 
 ---
 
 ## 📜 License & credits
 
-- License: **GNU Affero General Public License v3.0** (see `LICENSE`).
-- This fork: [himanshukumar-xp/ERP--CRM-Master](https://github.com/himanshukumar-xp/ERP--CRM-Master) (upstream: [idurar/idurar-erp-crm](https://github.com/idurar/idurar-erp-crm) by IDURAR — MERN + Ant Design open-source ERP/CRM). Local fixes (`.env`, missing `PaymentMode`/`Taxes` models) are documented above.
-- Contributing / conduct / security: see `CONTRIBUTING.md`, `CODE-OF-CONDUCT.md`, `SECURITY.md`.
+- License: **GNU Affero General Public License v3.0** (see [`LICENSE`](LICENSE)).
+- Based on [IDURAR ERP/CRM](https://github.com/idurar/idurar-erp-crm) by Salah Eddine Lalami, licensed under AGPL-3.0. This repository is a modified fork — rebranded UI text, emails and logos, renamed internal settings keys, plus the local fixes documented above — released under the same AGPL-3.0 license.
